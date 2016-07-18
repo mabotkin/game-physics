@@ -90,17 +90,17 @@
          if(getX() >= rightEdge - getRadius())     //hits the right edge
          {
             setX(rightEdge - getRadius());
-            dx = dx * -1 * LOSS; 
+            dx = dx * -1; 
          }
          else if(0 >= getX() - getRadius())
          {
             setX(getRadius());
-            dx = dx * -1 * LOSS; 
+            dx = dx * -1; 
          }
          else if(getY() >= bottomEdge - getRadius())
          {
             setY(bottomEdge - getRadius());
-            dy = dy * -1 * LOSS; 
+            dy = dy * -1; 
          }
          else if(0 >= getY() - getRadius())
          {
@@ -109,8 +109,8 @@
             U = mass*Math.abs(ay)*getY();
             double newvel = Math.sqrt((2*(E-U))/(mass));
             double ratio = newvel/Math.sqrt(dx*dx + dy*dy);
-            dx *= ratio;
-            dy *= ratio; 
+            dx *= (ratio*LOSS);
+            dy *= (ratio*LOSS); 
          }
          KE = (0.5)*mass*(dx*dx + dy*dy);
          U = mass*Math.abs(ay)*getY();
