@@ -6,7 +6,7 @@
       private double ax, ay;
       private double mass;
       private double KE, U, E;
-      private final double LOSS = 0.9;
+      private final double LOSS = 1;
        public Ball()
       {
          super(200, 200, 50, Color.BLACK);
